@@ -40,3 +40,23 @@ row count: 1693
 r: 4.244%  (12/11/2026)
 
 notes: 
+notable findings after checks 
+
+Mean Value of Zero / Missing Quotes per Zone
+zones
+<0.8         0.102970
+0.8-0.95     0.000000
+0.95-1.05    0.000000
+1.05-1.2     0.014423
+>1.2         0.446429
+
+Rows with Crossed Quotes
+1057
+
+Median Value of Moneyness per Zone
+zones
+<0.8         0.016163
+0.8-0.95     0.019417
+0.95-1.05    0.009276
+1.05-1.2     0.038462
+>1.2         0.666667
