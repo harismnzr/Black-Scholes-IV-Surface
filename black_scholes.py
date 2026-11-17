@@ -1,3 +1,5 @@
+import numpy as np
+
 # calculating both d1 and d2 in d1_d2()
 def d1_d2(S, X, T, r, vol):
     d1 = (np.log(S/X) + (r + 0.5 * vol**2)*T) / (vol * np.sqrt(T))
