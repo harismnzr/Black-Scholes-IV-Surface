@@ -50,9 +50,6 @@ zones
 1.05-1.2     0.014423
 >1.2         0.446429
 
-Rows with Crossed Quotes
-1057
-
 Median Value of Moneyness per Zone
 zones
 <0.8         0.016163
