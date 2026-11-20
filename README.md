@@ -1,6 +1,5 @@
 # An Investigation into the Black-Scholes Model
 
-## Investigating the assumption of constant volatility
 
 The Black-Scholes pricing model for a European call and put option:
 
