@@ -1,4 +1,4 @@
-# An Investigation Into the Black-Scholes Model
+# An Investigation into the Black-Scholes Model
 
 ## Investigating the assumption of constant volatility
 
