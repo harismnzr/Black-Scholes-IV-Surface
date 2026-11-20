@@ -1,4 +1,6 @@
-# Investigating the assumption of constant volatility
+# An Investigation Into the Black-Scholes Model
+
+## Investigating the assumption of constant volatility
 
 The Black-Scholes pricing model for a European call option:
 
