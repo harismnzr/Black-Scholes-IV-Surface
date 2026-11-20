@@ -2,9 +2,10 @@
 
 ## Investigating the assumption of constant volatility
 
-The Black-Scholes pricing model for a European call option:
+The Black-Scholes pricing model for a European call and put option:
 
 $$C = S\,N(d_1) - K e^{-rt}\,N(d_2)$$
+$$P = K e^{-rT} N(-d_2) - S_0 N(-d_1)$$
 
 where
 
@@ -105,6 +106,3 @@ The figure implies that options with a shorter time to maturity have higher impl
 - SPY options are American-style, but Black-Scholes prices European options. Dividends are ignored and the risk-free rate is held constant.
 - The surface between expiries is linearly interpolated, and long-dated strikes are sparse.
 
-## Next
-
-- Compare SPY's historical returns with a normal distribution (skewness, excess kurtosis and the frequency of extreme days) to test the distributional assumption directly.
