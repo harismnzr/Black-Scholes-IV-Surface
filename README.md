@@ -4,24 +4,24 @@
 
 The Black-Scholes pricing model for a European call and put option:
 
-$$C = S\,N(d_1) - K e^{-rt}\,N(d_2)$$
-$$P = K e^{-rT} N(-d_2) - S_0 N(-d_1)$$
+$$C = S\,N(d_1) - X e^{-rt}\,N(d_2)$$
+$$P = X e^{-rT} N(-d_2) - S_0 N(-d_1)$$
 
 where
 
-$$d_1 = \frac{\ln\left(\frac{S}{K}\right) + \left(r + \frac{\sigma^2}{2}\right)t}{\sigma\sqrt{t}}, \qquad d_2 = d_1 - \sigma\sqrt{t}$$
+$$d_1 = \frac{\ln\left(\frac{S}{X}\right) + \left(r + \frac{\sigma^2}{2}\right)t}{\sigma\sqrt{t}}, \qquad d_2 = d_1 - \sigma\sqrt{t}$$
 
 and $N(\cdot)$ is the standard normal cumulative distribution function.
 
 The Black-Scholes model allows us to set a price for an option based on these variables:
 
 - Current stock price ($S$)
-- Strike price ($K$)
+- Strike price ($X$)
 - Time to expiry ($t$)
 - Risk-free rate ($r$)
 - Volatility ($\sigma$)
 
-The formula takes volatility as a standalone value, independent of any other variables. The model therefore assumes that volatility remains constant when pricing an option. I chose to investigate this assumption by observing the relationship between an option's **implied volatility** and its strike price ($K$) and time to expiry ($t$).
+The formula takes volatility as a standalone value, independent of any other variables. The model therefore assumes that volatility remains constant when pricing an option. I chose to investigate this assumption by observing the relationship between an option's **implied volatility** and its strike price ($X$) and time to expiry ($t$).
 
 The first four variables are set by the market, so if we already know the price of the option, we can substitute our values to get back the volatility of that option. This is the **implied volatility**.
 
