@@ -163,6 +163,6 @@ The figure implies that options with a shorter time to maturity have higher impl
 
 
 
-## Testing the Distributional Assumption
+### 3.2 Testing the Distributional Assumption
 
 ... *(To be added along with final interpretations and explanations of the data against the model)*
