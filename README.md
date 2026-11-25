@@ -45,7 +45,11 @@ The model assumes the stock price follows **geometric Brownian motion**, which m
 
 - To understand that the aggregated outcomes of random walks follow a normal distribution, we can observe the outcomes of a **Galton Board**. Here, each collision with each pin represents a step of the random walk. 
 
-![A Galton board: balls bounce off pins and collect in a bell-shaped pile (Image: By Marcin Floryan - Own work, CC BY 2.5, https://commons.wikimedia.org/wiki/Special:Redirect/page/1700815)](images/galton_board.png)
+<p align="center">
+  <img src="images/galton_board.png" alt="A Galton board: balls bounce off pins and collect in a bell-shaped pile" width="300">
+  <br>
+  <sub>Image: <a href="https://commons.wikimedia.org/wiki/Special:Redirect/page/1700815">Marcin Floryan</a>, own work, <a href="https://creativecommons.org/licenses/by/2.5/">CC BY 2.5</a></sub>
+</p>
 
 - **Brownian motion** is a representation of a random walk in continuous form. It describes the random movement of particles in a fluid and measures the total displacement from the starting position. This displacement can be negative however, and since stock prices can’t go below zero, we say that they follow **geometric Brownian motion** which instead measures the net percentage change from the starting position. It is then the log of the price that follows ordinary Brownian motion leading us to finally arrive at the assumption that log returns are normally distributed.
 
