@@ -53,7 +53,7 @@ The model assumes the stock price follows **geometric Brownian motion**, which m
 
 - **Brownian motion** is a representation of a random walk in continuous form. It describes the random movement of particles in a fluid and measures the total displacement from the starting position. This displacement can be negative however, and since stock prices can’t go below zero, we say that they follow **geometric Brownian motion** which instead measures the net percentage change from the starting position. It is then the log of the price that follows ordinary Brownian motion leading us to finally arrive at the assumption that log returns are normally distributed.
 
-## 2.2 Constant Volatility: 
+### 2.2 Constant Volatility: 
 
 Another assumption of the Black-Scholes Model is that volatility remains constant across strike prices and expirations when pricing an option. 
 
@@ -92,14 +92,14 @@ I solved for the implied volatility of real SPY options from a market snapshot t
 
 The 3D surface shows how the implied volatility of an option varies with its strike price relative to the spot price, as well as with time to maturity. We will explore both of these relationships below.
 
-### Is volatility constant across strikes?
+#### Is volatility constant across strikes?
 
-#### What the Black-Scholes model assumes
+##### What the Black-Scholes model assumes
 
 - A fixed volatility ($\sigma$) prices every option on a stock for every strike price
 - The underlying stock's returns (log returns) follow a normal distribution
 
-#### How I tested it
+##### How I tested it
 
 **Hypothesis:** If we assume the assumption of constant $\sigma$ held, we would expect a horizontal straight line dictating one volatility for all options.
 
@@ -123,13 +123,13 @@ However, the curve produced here is asymmetric, with implied volatility consider
 
 To further investigate this assumption, we will compare SPY's historic returns with a normal distribution, testing whether features suggested by the option prices also appear in past data.
 
-### Is volatility constant across expiries?
+#### Is volatility constant across expiries?
 
-#### What the Black-Scholes model assumes
+##### What the Black-Scholes model assumes
 
 - A fixed volatility ($\sigma$) prices every option on a stock for every expiry date
 
-#### How I tested it
+##### How I tested it
 
 **Hypothesis:** If we assume the assumption of constant $\sigma$ held, we would expect the same implied volatility for every expiry. On a graph of implied volatility against moneyness (strike divided by spot), the curves for each expiry would stack on top of each other and appear as one.
 
@@ -137,7 +137,7 @@ To further investigate this assumption, we will compare SPY's historic returns w
 
 ![Implied volatility skews across expiries](images/smiles_by_expiry.png)
 
-#### Observations
+##### Observations
 
 - Every expiry shows the same downward skew as the single-expiry plot
 - The skew is steepest for the shortest expiries and gradually becomes flatter for longer expiries. At moneyness 0.8, implied volatility is about 38% for the 29-day expiry, against about 27% for the 169-day expiry
@@ -147,14 +147,14 @@ To further investigate this assumption, we will compare SPY's historic returns w
 
 The figure implies that options with a shorter time to maturity have higher implied volatilities when further out-of-the-money and lower implied volatilities when near-the-money, compared with longer-dated options. Implied volatility varies much more across strikes for shorter-dated options than for longer-dated ones.
 
-### Data and method notes
+#### Data and method notes
 
 - **Data:** SPY option chain from Yahoo Finance (via `yfinance`), a single snapshot taken on 12 November 2026 (spot 760.44)
 - **Prices:** mid price, (bid + ask) / 2; only out-of-the-money options with a non-zero bid, within moneyness 0.8 to 1.2
 - **Risk-free rate:** 4.244% (US 3-month Treasury yield, 12 November 2026)
 - **Implied volatility:** solved by bisection using my own Black-Scholes pricer
 
-### Limitations
+#### Limitations
 
 - This is a single-day snapshot using mid prices, so the results describe one moment in the market.
 - The 1-week expiry (19 November 2026) was excluded. Put-call parity on its quotes implied a forward about $1.70 above the one implied by spot, most likely because spot and option quotes were captured at slightly different times. Short maturities are the most sensitive to this, and longer expiries may be affected to a smaller degree, which could explain small irregularities near moneyness 1.0.
